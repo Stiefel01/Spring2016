@@ -16,7 +16,7 @@ Aggregated results are stored in tournament.txt
 Unpublished work (c)2013 Project Lead The Way
 CSE Project 1.3.5 Collaborating on a Project
 Draft, Do Not Distribute
-Version 2/29/2016 
+Version 2/29/2016 AS
 '''
 
 import random
@@ -99,8 +99,8 @@ def play_iterative_rounds(player1, player2):
 def get_action(player, history, opponent_history, score, opponent_score, getting_team_name=False):
     '''Gets the strategy for the player, given their own history and that of
     their opponent, as well as the current scores within this pairing.
-    The parameters history and opponenet history are strings with one letter
-    per round that has been played so far: either an 'c' for collude or a 'b' for 
+    The parameters history and opponent history are strings with one letter
+    per round that has been played so far: either a 'c' for collude or a 'b' for 
     betray. The function should return one character, 'c' or 'b'. 
     The history strings have the first round between these two players 
     as the first character and the most recent round as the last character.'''
@@ -111,9 +111,9 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
     # This example player always colludes
     if player == 0:
         if getting_team_name:
-            return 'loyal'
+            return 'betrayer'
         else:
-            return 'c'
+            return 'b'
 
     
         
@@ -173,7 +173,7 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
     ######
     ######
     #
-    elif player == 3:
+    elif player == 0:
         if getting_team_name:
             return 'loyal vengeful'
         else:
@@ -199,7 +199,7 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
     ######
     ######
     #
-    elif player == 4:
+    elif player == 1:
         if getting_team_name:
             return 'betray every 3rd round'
         else:
@@ -224,7 +224,7 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
     ######
     ######        
     #
-    elif player == 5:
+    elif player == 2:
         if getting_team_name:
             return 'loyal vengeful'
         else:
@@ -248,7 +248,7 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
     ######
     ######        
     #
-    elif player == 6:
+    elif player == 3:
         if getting_team_name:
             return 'loyal vengeful'
         else:
@@ -274,7 +274,7 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
     ######
     ######       
     #
-    elif player == 7:
+    elif player == 4:
         if getting_team_name:
             return 'loyal vengeful'
         else:
@@ -300,7 +300,7 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
     ######
     ######        
     #
-    elif player == 8:
+    elif player == 5:
         if getting_team_name:
             #if there was a previous round just like 
             return 'loyal vengeful with permanent second impression'
@@ -343,7 +343,7 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
     ######
     ######
     #
-    elif player == 9:
+    elif player == 6:
         if getting_team_name:
             return 'loyal vengeful'
         else:
@@ -721,7 +721,7 @@ def play_tournament(num_players):
     print('\n\n\n Average per round, with team strategy names:\n\n')
     #print team ids, total scores, and names
     for player in range(num_players):
-        print('player ' + str(player) , ': ' , 
+        print(str(player) , ': ' , 
                str(int(scores[player])/num_players) , ' points: ',
                team_names[player])
     
